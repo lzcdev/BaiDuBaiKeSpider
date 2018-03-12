@@ -6,5 +6,4 @@
 - set(),可选方案（MySQL, redis）
 - urllib2
 - BeautifulSoup，可选方案（正则表达式，html.parser,lxml)
--   fad
 
