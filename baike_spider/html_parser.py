@@ -10,8 +10,8 @@ class HtmlParser(object):
         new_urls = set()
         # /view/123.html
         # /item/Python/407313
-        # https: // baike.baidu.com / item / java / 85979
-        links = soup.find_all('a', href=re.compile(r"/view/\d+\.htm"))
+        # links = soup.find_all('a', href=re.compile(r"/view/\d+\.htm"))
+        links = soup.find_all('a', href=re.compile(r"/item/*"))
 
         for link in links:
             new_url = link['href']
@@ -24,21 +24,21 @@ class HtmlParser(object):
         res_data = {}
 
         res_data['url'] = page_url
-
 # <dd class="lemmaWgt-lemmaTitle-title"> <h1>Python</h1>
 
         title_node = soup.find('dd', class_="lemmaWgt-lemmaTitle-title").find("h1")
         res_data['title'] = title_node.get_text()
+        print res_data['title']
+        # class = "lemma-summary" label-module="lemmaSummary" >
+        # summary_node = soup.find('div', classs_="lemma-summary")
+        # res_data['summary'] = summary_node.get_text()
 
-#        class ="lemma-summary" label-module="lemmaSummary" >
-#         summary_node = soup.find('div', classs_="lemma-summary")
-#         res_data['summary'] = summary_node.get_text()
-#         print 'res' + res_data['summary']
         return res_data
 
 
     def parse(self, page_url, html_cont):
         if page_url is None or html_cont is None:
+            print 'page_url is None'
             return
 
         soup = BeautifulSoup(html_cont, 'html.parser', from_encoding='utf-8')

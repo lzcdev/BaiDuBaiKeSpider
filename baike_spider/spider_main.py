@@ -1,5 +1,7 @@
 
+import ssl
 import url_manager, html_downloader, html_parser, html_outputer
+
 
 class SpiderMain(object):
     def __init__(self):
@@ -15,23 +17,26 @@ class SpiderMain(object):
         while self.urls.has_new_url():
             try:
                 new_url = self.urls.get_new_url()
+                count = count + 1
                 print 'craw %d : %s' % (count, new_url)
                 html_cont = self.downloader.download(new_url)
                 new_urls, new_data = self.parser.parse(new_url, html_cont)
                 self.urls.add_new_urls(new_urls)
                 self.outputer.collect_data(new_data)
-
-                if count == 1000:
+                if count == 100:
+                    print 'done'
                     break
 
-                count = count + 1
+
             except:
                 print 'craw failed'
+
 
         self.outputer.output_html()
 
 if __name__=="__main__":
-    root_url = "https://baike.baidu.com/view/10812319.htm"
+    # root_url = "https://baike.baidu.com/view/10812319.htm"
+    root_url = "https://baike.baidu.com/item/python/407313"
 
     obj_spider = SpiderMain()
     obj_spider.craw(root_url)

@@ -11,7 +11,7 @@ class UrlManager(object):
         if url not in self.new_urls and url not in self.old_urls:
             self.new_urls.add(url)
 
-    def new_new_urls(self, urls):
+    def add_new_urls(self, urls):
         if urls is None or len(urls) == 0:
             return
         for url in urls:
