@@ -56,3 +56,6 @@ links = soup.find_all('a', href=re.compile(r"/item/*"))
 QQ群：455285463
 QQ：1185907688
 微信：chaochao625121
+- - - 
+如果对你有所帮助，给个star。赠人玫瑰，手有余香。
+
