@@ -29,7 +29,7 @@ links = soup.find_all('a', href=re.compile(r"/item/*"))
 在spider_main中加上import ssl
 
 #### 3.卡住不走，爬取几条就不动了
-修改html_downloader.py,不明白的可以看我的代码
+修改html_downloader.py,不明白的可以看我的代码[https://gist.github.com/lzcdev/e215870dd3430eb184beb5015f0b319d](https://gist.github.com/lzcdev/e215870dd3430eb184beb5015f0b319d)
 ```
  try:
             response = urllib2.urlopen(url, timeout=10)
