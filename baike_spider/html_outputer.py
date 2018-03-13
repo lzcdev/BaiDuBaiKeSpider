@@ -16,7 +16,6 @@ class HtmlOutputer(object):
         fout.write("<body>")
         fout.write("<table>")
 
-# ascii
         for data in self.datas:
             fout.write("<tr>")
             fout.write("<td>%s</td>" % data['url'])
