@@ -3,7 +3,7 @@
 ## 使用方法
 #### 1.命令行
 ```
-cd baike_spider
+cd baike_spider_2.7
 python spider_main.py
 ```
 #### 2.PyCharm
@@ -11,6 +11,9 @@ python spider_main.py
 Open baike_spider
 Run  'spider_main'
 ```
+
+- - - - --
+增加Python3.7版本，文件夹`baike_spider_3.7`
 ## 我遇到的问题
 #### 1.地址问题
 之前的地址[https://baike.baidu.com/view/10812319.htm](https://baike.baidu.com/view/10812319.htm)
