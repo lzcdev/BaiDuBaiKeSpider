@@ -35,7 +35,9 @@ class HtmlParser(object):
         # summary_node = soup.find('div', classs_="lemma-summary")
         # res_data['summary'] = summary_node.get_text()
 
-        # 目录下所有内容
+        # ff = soup.select('div[class="para-title level-2"] > h2')
+        # print(ff)
+
         catlog_node = soup.select('div[class="para"]')
         for content in catlog_node:
             print(content.get_text().strip())

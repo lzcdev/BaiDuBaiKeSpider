@@ -56,7 +56,6 @@ links = soup.find_all('a', href=re.compile(r"/item/*"))
 - BeautifulSoup，可选方案（正则表达式，html.parser,lxml)
 
 ## 联系我
-QQ群：455285463
 QQ：1185907688
 微信：chaochao625121
 - - - 
