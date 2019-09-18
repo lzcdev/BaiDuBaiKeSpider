@@ -39,8 +39,8 @@ class HtmlParser(object):
         # print(ff)
 
         catlog_node = soup.select('div[class="para"]')
-        for content in catlog_node:
-            print(content.get_text().strip())
+        # for content in catlog_node:
+            # print(content.get_text().strip())
 
         return res_data
 
